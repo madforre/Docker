@@ -5,7 +5,9 @@ FROM ubuntu:18.04
 MAINTAINER Madforre <madforre@gmail.com>
 
 # 해당 명령어를 Container에 실행
-RUN add-apt-repository ppa:ondrej/php -y \
+RUN apt-get update && apt-get upgrade \
+    apt-get install software-properties-common \
+    add-apt-repository ppa:ondrej/php \
     apt-get update && apt-get install -yq \
     php7.3-fpm \
     php7.3-cli \
@@ -15,12 +17,14 @@ RUN add-apt-repository ppa:ondrej/php -y \
     php7.3-mbstring \
     php7.3-xml \
     php7.3-common \
-    php7.3-json
+    php7.3-json \
+RUN service php7.3-fpm start \
+    ufw allow 'Nginx HTTP' \
 
 # Dockerfile이 있는 폴더의 하위 폴더에 있는 파일을 Container
 # 내부 아무대나로 복사 시킬 수 있다.
 # 설정파일을 위치시키자!
-ADD
+# ADD 
 
 # 원하는 포트를 개방한다. (허가할 PORT 입력)
 EXPOSE
