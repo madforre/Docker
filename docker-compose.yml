@@ -1,14 +1,20 @@
 version: '3'
- 
-services:
 
+# Docker와 맵핑할 볼륨은 현재 /home/osboxes/share에 있다.
+# 다른 경로를 원한다면 볼륨에서 : 앞을 전부 바꿔주도록 하자.
+
+services:
     php-fpm:
         build:
             context: ./build/php
         volumes:
             - /home/osboxes/share/docker/config/php/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+            - /home/osboxes/share/docker/logs/php-fpm:/var/log/nginx
+            - /home/osboxes/share/public:/usr/share/nginx/html
         networks:
             - backend
+        expose: 
+            - "9000"
 
     nginx:
         image: nginx:1.14.0
@@ -17,8 +23,8 @@ services:
         volumes:
             - /home/osboxes/share/docker/config/nginx:/etc/nginx/conf.d
             - /home/osboxes/share/public:/usr/share/nginx/html
-            - /home/osboxes/share/logs/error.log:/var/log/nginx/error.log
-            - /home/osboxes/share/logs/access.log:/var/log/nginx/access.log
+            - /home/osboxes/share/docker/logs/nginx/error.log:/var/log/nginx/error.log
+            - /home/osboxes/share/docker/logs/nginx/access.log:/var/log/nginx/access.log
         depends_on:
             - php-fpm
         networks:

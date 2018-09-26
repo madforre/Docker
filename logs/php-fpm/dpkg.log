@@ -1,0 +1,11 @@
+2018-09-26 03:00:45 startup archives unpack
+2018-09-26 03:00:45 install nano:amd64 <none> 2.7.4-1
+2018-09-26 03:00:45 status half-installed nano:amd64 2.7.4-1
+2018-09-26 03:00:45 status unpacked nano:amd64 2.7.4-1
+2018-09-26 03:00:45 status unpacked nano:amd64 2.7.4-1
+2018-09-26 03:00:45 startup packages configure
+2018-09-26 03:00:45 configure nano:amd64 2.7.4-1 <none>
+2018-09-26 03:00:45 status unpacked nano:amd64 2.7.4-1
+2018-09-26 03:00:45 status unpacked nano:amd64 2.7.4-1
+2018-09-26 03:00:45 status half-configured nano:amd64 2.7.4-1
+2018-09-26 03:00:45 status installed nano:amd64 2.7.4-1
