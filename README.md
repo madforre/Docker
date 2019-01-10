@@ -1,26 +1,26 @@
 # Docker Snippets
 
 ## Login into running container.
-- sudo docker exec -it $CONTAINER_ID bash
+    sudo docker exec -it $CONTAINER_ID bash
 
 ## Stop container
-- sudo docker stop $CONTAINER_ID
+    sudo docker stop $CONTAINER_ID
 
 ## Stop all containers
-- sudo docker stop $(sudo docker ps -a -q)
+    sudo docker stop $(sudo docker ps -a -q)
 
 ## Remove all docker images
-- sudo docker rmi $(sudo docker images -a -q)
+    sudo docker rmi $(sudo docker images -a -q)
 
 ## Stop and Remove all docker containers
-- sudo docker stop $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -q)
+    sudo docker stop $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -q)
 
 ## Stop and Remove all docker containers + Remove all docker images
-- sudo docker stop $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -q) && sudo docker rmi $(sudo docker images -a -q)
+    sudo docker stop $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -q) && sudo docker rmi $(sudo docker images -a -q)
 
 ## 컨테이너 실행하기
 
-- docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
+    docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 
  자주 사용하는 옵션
 
