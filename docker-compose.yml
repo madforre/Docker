@@ -1,6 +1,6 @@
 version: '3'
 
-# Docker와 맵핑할 볼륨은 현재 /home/osboxes/share에 있다.
+# Docker와 맵핑할 볼륨은 현재 /home/ubuntu/Docker에 있다.(Amazon EC2 인스턴스 이용하여 clone한 상태)
 # 다른 경로를 원한다면 볼륨에서 : 앞을 전부 바꿔주도록 하자.
 
 services:
@@ -8,9 +8,9 @@ services:
         build:
             context: ./build/php
         volumes:
-            - /home/osboxes/share/docker/config/php/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
-            - /home/osboxes/share/docker/logs/php-fpm:/var/log/nginx
-            - /home/osboxes/share/public:/usr/share/nginx/html
+            - /home/ubuntu/Docker/config/php/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+            - /home/ubuntu/Docker/logs/php-fpm:/var/log/nginx
+            - /home/ubuntu/public:/usr/share/nginx/html
         networks:
             - backend
         expose: 
@@ -19,12 +19,12 @@ services:
     nginx:
         image: nginx:1.14.0
         ports:
-            - 8080:80
+            - 80:80
         volumes:
-            - /home/osboxes/share/docker/config/nginx:/etc/nginx/conf.d
-            - /home/osboxes/share/public:/usr/share/nginx/html
-            - /home/osboxes/share/docker/logs/nginx/error.log:/var/log/nginx/error.log
-            - /home/osboxes/share/docker/logs/nginx/access.log:/var/log/nginx/access.log
+            - /home/ubuntu/Docker/config/nginx:/etc/nginx/conf.d
+            - /home/ubuntu/public:/usr/share/nginx/html
+            - /home/ubuntu/Docker/logs/nginx/error.log:/var/log/nginx/error.log
+            - /home/ubuntu/Docker/logs/nginx/access.log:/var/log/nginx/access.log
         depends_on:
             - php-fpm
         networks:
@@ -42,6 +42,7 @@ services:
     #         MYSQL_USER: ${MYSQL_USER}
     #         MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
+# 사용자 지정 네트워크를 만들어 사용한다.
 networks:
     backend:
         external: true

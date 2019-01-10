@@ -1,6 +1,6 @@
 # Docker Snippets
 
-## Login into running container.
+## 작동하는 컨테이너 안으로 들어가기
     sudo docker exec -it $CONTAINER_ID bash
 
 ## Stop container
