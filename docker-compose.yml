@@ -8,9 +8,9 @@ services:
         build:
             context: ./build/php
         volumes:
-            - /home/ubuntu/Docker/config/php/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
-            - /home/ubuntu/Docker/logs/php-fpm:/var/log/nginx
-            - /home/ubuntu/public:/usr/share/nginx/html
+            - /home/madforre/dev/madforre/Docker/config/php/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+            - /home/madforre/dev/madforre/Docker/logs/php-fpm:/var/log/nginx
+            - /home/madforre/dev/public:/usr/share/nginx/html
         networks:
             - backend
         expose: 
@@ -21,10 +21,10 @@ services:
         ports:
             - 80:80
         volumes:
-            - /home/ubuntu/Docker/config/nginx:/etc/nginx/conf.d
-            - /home/ubuntu/public:/usr/share/nginx/html
-            - /home/ubuntu/Docker/logs/nginx/error.log:/var/log/nginx/error.log
-            - /home/ubuntu/Docker/logs/nginx/access.log:/var/log/nginx/access.log
+            - /home/madforre/dev/madforre/Docker/config/nginx:/etc/nginx/conf.d
+            - /home/madforre/dev/madforre/public:/usr/share/nginx/html
+            - /home/madforre/dev/madforre/Docker/logs/nginx/error.log:/var/log/nginx/error.log
+            - /home/madforre/dev/madforre/Docker/logs/nginx/access.log:/var/log/nginx/access.log
         depends_on:
             - php-fpm
         networks:

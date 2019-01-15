@@ -199,3 +199,5 @@
 192.168.0.85 - - [26/Sep/2018:03:57:41 +0000] "GET /503.php HTTP/1.1" 404 571 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
 192.168.0.85 - - [26/Sep/2018:03:57:44 +0000] "GET /502.php HTTP/1.1" 200 20 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
 192.168.0.85 - - [26/Sep/2018:03:57:48 +0000] "GET /index.php HTTP/1.1" 200 86993 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+172.21.0.1 - - [15/Jan/2019:02:52:39 +0000] "GET / HTTP/1.1" 403 571 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+172.21.0.1 - - [15/Jan/2019:02:52:39 +0000] "GET /favicon.ico HTTP/1.1" 404 571 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"

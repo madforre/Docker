@@ -255,3 +255,15 @@ docker cp mycontainer:/path/foo.txt /path/foo.txt
 ------------------
 
 EXPOSE는 호스트와 연결만 할 뿐 외부에 노출은 되지 않습니다.
+
+===================================================
+
+중요 docker composer 사용법 꼭 기억할 것.
+
+sudo docker run --rm --interactive --tty --volume 원하는경로:/app composer {원하는 컴포저명령(ex 라라벨이나 루멘설치, 원하는 라이브러리 설치 등등)}
+
+	ex ) composer create-project --prefer-dist laravel/laravel blog
+
+docker artisan 명령
+
+sudo docker run --rm -v /home/ubuntu/lumen-coupon/coupon:/app -w /app php:cli php artisan list

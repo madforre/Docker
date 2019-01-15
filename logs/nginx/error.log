@@ -139,3 +139,5 @@
 2018/09/26 03:30:20 [error] 6#6: *8 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 192.168.0.85, server: , request: "GET /favicon.ico HTTP/1.1", host: "192.168.0.220:8080", referrer: "http://192.168.0.220:8080/"
 2018/09/26 03:30:24 [error] 6#6: *8 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 192.168.0.85, server: , request: "GET /favicon.ico HTTP/1.1", host: "192.168.0.220:8080", referrer: "http://192.168.0.220:8080/"
 2018/09/26 03:33:40 [error] 6#6: *12 open() "/usr/share/nginx/html/index.pbp" failed (2: No such file or directory), client: 192.168.0.85, server: , request: "GET /index.pbp HTTP/1.1", host: "192.168.0.220:8080"
+2019/01/15 02:52:39 [error] 6#6: *1 directory index of "/usr/share/nginx/html/" is forbidden, client: 172.21.0.1, server: , request: "GET / HTTP/1.1", host: "localhost"
+2019/01/15 02:52:39 [error] 6#6: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.21.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
